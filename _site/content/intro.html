@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Books with Jupyter and Jekyll</title>
-  <meta name="description" content="# Books with Jupyter and Jekyll* Is this really working?* **but is it really****not sure** thoughJupyter Books lets you build an online book using a collecti...">
+  <meta name="description" content="# Books with Jupyter and JekyllThis Book covers several topics on data science and...## RulesWhile developing a new page you have to create a new branch usin...">
 
   <link rel="canonical" href="http://0.0.0.0:4000//content/intro.html">
   <link rel="alternate" type="application/rss+xml" title="YOUR BOOK NAME" href="http://0.0.0.0:4000//feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000//content/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Books with Jupyter and Jekyll" />
-<meta property="og:description" content="# Books with Jupyter and Jekyll* Is this really working?* **but is it really****not sure** thoughJupyter Books lets you build an online book using a collecti..." />
+<meta property="og:description" content="# Books with Jupyter and JekyllThis Book covers several topics on data science and...## RulesWhile developing a new page you have to create a new branch usin..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://0.0.0.0:4000//content/intro.html",
   "headline": "Books with Jupyter and Jekyll",
-  "datePublished": "2019-11-27T09:06:50-06:00",
-  "dateModified": "2019-11-27T09:06:50-06:00",
-  "description": "# Books with Jupyter and Jekyll* Is this really working?* **but is it really****not sure** thoughJupyter Books lets you build an online book using a collecti...",
+  "datePublished": "2019-12-01T17:30:06-06:00",
+  "dateModified": "2019-12-01T17:30:06-06:00",
+  "description": "# Books with Jupyter and JekyllThis Book covers several topics on data science and...## RulesWhile developing a new page you have to create a new branch usin...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -563,6 +563,27 @@ initFunction(initPrint)
 
       
     
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/Visualization/Learning_notebook.html"
+        >
+          
+          Visualization
+        </a>
+
+        
+      </li>
+
+      
+    
   </ul>
   <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
 </nav>
@@ -604,65 +625,11 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
               <h1 id="books-with-jupyter-and-jekyll">Books with Jupyter and Jekyll</h1>
 
-<p><img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left" /></p>
+<p>This Book covers several topics on data science and…</p>
 
-<ul>
-  <li>Is this really working?</li>
-  <li><strong>but is it really</strong>
-<strong>not sure</strong> though</li>
-</ul>
+<h2 id="rules">Rules</h2>
 
-<p>Jupyter Books lets you build an online book using a collection of Jupyter Notebooks
-and Markdown files. Its output is similar to the excellent <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> tool,
-and adds extra functionality for people running a Jupyter stack.</p>
-
-<p>For an example of a book built with Jupyter Books, see the <a href="https://www.textbook.ds100.org/">textbook for Data 100</a> at UC Berkeley.</p>
-
-<p>Here are a few features of Jupyter Books</p>
-
-<ul>
-  <li>All course content is written in markdown and Jupyter Notebooks, stored in <code class="highlighter-rouge">notebooks/</code></li>
-  <li>The Jupyter Book repo comes packaged with helper scripts to convert these into Jekyll pages (in <code class="highlighter-rouge">scripts/</code>) that can be hosted for free on GitHub</li>
-  <li>Pages can have <a href="https://mybinder.org">Binder</a> or JupyterHub links automatically added for interactivity.</li>
-  <li>The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.</li>
-  <li>There are lots of nifty HTML features under-the-hood, such as Turbolinks fast-navigation and
-click-to-copy in code cells.</li>
-</ul>
-
-<h2 id="getting-started">Getting started</h2>
-
-<p>To get started, you may be interested in the following links.
-Here are a few links of interest:</p>
-
-<ul>
-  <li>
-    <p><strong><a href="features/features">Quickstart</a></strong> is a quick demo and overview of Jupyter Books.</p>
-  </li>
-  <li>
-    <p><strong><a href="guide/01_overview">The Jupyter Book Guide</a></strong>
-will step you through the process of configuring and building your own Jupyter Book.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://github.com/jupyter/jupyter-book">The Jupyter Book template repo</a></strong> is the template
-repository you’ll use as a start for your Jupyter Book.</p>
-  </li>
-  <li>
-    <p><strong>A demo of the Jupyter Book</strong> can be browsed via the sidebar to the left.</p>
-  </li>
-</ul>
-
-<h2 id="installation">Installation</h2>
-
-<p>Here’s a brief rundown of how to create your own Jupyter Book using this site. For a more
-complete guide, see <a href="guide/01_overview">the Jupyter Book guide</a>.</p>
-
-<ul>
-  <li>Fork the Jupyter Book template repo</li>
-  <li>Replace the demo notebooks in <code class="highlighter-rouge">content/</code> with your own notebooks and markdown files.</li>
-  <li>Create a Table of Contents yaml file by editing <code class="highlighter-rouge">_data/toc.yaml</code>.</li>
-  <li>Generate the Jekyll markdown for your notebooks by running <code class="highlighter-rouge">scripts/generate_book.py</code></li>
-  <li>Push your changes to GitHub (or wherever you host your site)!</li>
-</ul>
+<p>While developing a new page you have to create a new branch using that page’s name. When you think it is finished create a pull request to merge with master and wait for the other contributors to review it.</p>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 

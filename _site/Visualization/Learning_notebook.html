@@ -1,0 +1,3194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Visualization</title>
+  <meta name="description" content="        SLU03-Visualization with Pandas &amp; Matplotlib: Learning notebook In this notebook we will cover the following:ScatterplotsLine chartsBar chartsHis...">
+
+  <link rel="canonical" href="http://0.0.0.0:4000//Visualization/Learning_notebook.html">
+  <link rel="alternate" type="application/rss+xml" title="YOUR BOOK NAME" href="http://0.0.0.0:4000//feed.xml">
+
+  <meta property="og:url"         content="http://0.0.0.0:4000//Visualization/Learning_notebook.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Visualization" />
+<meta property="og:description" content="        SLU03-Visualization with Pandas &amp; Matplotlib: Learning notebook In this notebook we will cover the following:ScatterplotsLine chartsBar chartsHis..." />
+<meta property="og:image"       content="http://0.0.0.0:4000/images/logo/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://0.0.0.0:4000//Visualization/Learning_notebook.html",
+  "headline": "Visualization",
+  "datePublished": "2019-12-01T17:30:06-06:00",
+  "dateModified": "2019-12-01T17:30:06-06:00",
+  "description": "        SLU03-Visualization with Pandas &amp; Matplotlib: Learning notebook In this notebook we will cover the following:ScatterplotsLine chartsBar chartsHis...",
+  "author": {
+    "@type": "Person",
+    "name": "YOUR AUTHOR NAME"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:4000/",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://0.0.0.0:4000/",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/regular.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/solid.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    }
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'YOUR-ORG/YOUR-REPO',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js" async></script>
+  <script src="/assets/js/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://jupyter.org/jupyter-book/"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">YOUR BOOK NAME</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/intro.html"
+        >
+          
+          Home
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="https://github.com/jupyter/jupyter-book"
+        >
+          
+          GitHub repository
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href=".html"
+        >
+          
+            1.
+          
+          Search
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Demo textbook</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/features/features.html"
+        >
+          
+          Features and customization
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/markdown.html"
+                >
+                  
+                  Markdown files
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/notebooks.html"
+                >
+                  
+                  Jupyter notebooks
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry c-sidebar__entry--active"
+          href="/Visualization/Learning_notebook.html"
+        >
+          
+          Visualization
+        </a>
+
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><i class="fa fa-download"></i></button>
+    <div class="download-buttons">
+        <a href="/content/Visualization/Learning_notebook.ipynb" download>
+        <button id="interact-button-download" class="interact-button">ORIG</button>
+        </a>
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">PDF</button></a>
+    </div>
+</div>
+
+  <button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+  
+  
+  
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button"><i class="fa fa-search"></i></a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SLU03-Visualization-with-Pandas-&amp;-Matplotlib:-Learning-notebook">SLU03-Visualization with Pandas &amp; Matplotlib: Learning notebook<a class="anchor-link" href="#SLU03-Visualization-with-Pandas-&amp;-Matplotlib:-Learning-notebook"> </a></h1><p>In this notebook we will cover the following:</p>
+<ul>
+<li>Scatterplots</li>
+<li>Line charts</li>
+<li>Bar charts</li>
+<li>Histograms</li>
+<li>Box plots</li>
+<li>Scaling plots</li>
+<li>Chartjunk</li>
+<li>Matplotlib basics</li>
+<li>How to choose the right chart</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We start by importing pandas and matplotlib.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Matplotlib is a library initially designed to save charts to files.</p>
+<p>When plotting charts on a jupyter notebook we have tell jupyter that we want to render the plots inside the notebook</p>
+<p>The most common way to specify this is by using one jupyter notebook <a href="http://ipython.readthedocs.io/en/stable/interactive/magics.html">magic commands</a>, which are ways to modify the default behavior of the notebook.</p>
+<p><code>%matplotlib inline</code> will set up the notebook to be used with matplotlib.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dataset we are going to use is a variation of the Online Retail Dataset (<a href="http://archive.ics.uci.edu/ml/datasets/online+retail">source</a>)</p>
+<p>This is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/online_orders.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>date</th>
+      <th>sales</th>
+      <th>n_items</th>
+      <th>n_orders</th>
+      <th>day_of_week</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Australia</td>
+      <td>2010-12-01</td>
+      <td>358.25</td>
+      <td>107</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Australia</td>
+      <td>2010-12-08</td>
+      <td>258.90</td>
+      <td>214</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Australia</td>
+      <td>2010-12-17</td>
+      <td>415.70</td>
+      <td>146</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Australia</td>
+      <td>2011-01-06</td>
+      <td>7154.38</td>
+      <td>4802</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Australia</td>
+      <td>2011-01-10</td>
+      <td>81.60</td>
+      <td>96</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dataset consists of the following fields.</p>
+<ul>
+<li><em>country</em>: Country name</li>
+<li><em>date</em>: Date the row is showing a summary of</li>
+<li><em>sales</em>: Total sales revenue (in UK pounds) for that country and date</li>
+<li><em>n_items</em>: Number of items sold</li>
+<li><em>n_orders</em>: Number of different online orders</li>
+<li><em>day_of_week</em>: Day of week</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scatter-plots">Scatter plots<a class="anchor-link" href="#Scatter-plots"> </a></h3><p>We can use a scatter plot to see the relationship between the number of items sold and the total sales revenue</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n_items&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_10_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have made our very first chart, yaaaay!!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note</strong>: You see that I add a semicolon (;) at the end of the cell, that is because jupyter notebooks by default return the last value., so if I run the cell without the notebook, the plot object will be displayed.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n_items&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fb8f0462a20&gt;</pre>
+</div>
+
+</div>
+</div>
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_13_1.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Depending on your browser and your screen resolution, you might think that the previous chart is small. We can fix this by changing the matplotlib options to render bigger charts.</p>
+<p>We can set the chart size globally by changing the matplotlib default settings. These are included in the dictionary <code>plt.rcParams</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The plot size is defined as a list with 2 elements, <code>[width, height]</code> in inches</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the default chart size is 6 inches wide by 4 inches tall, which is fairly small.</p>
+<p>For example, if we want to set the chart size as 10 inches wide by 10 inches high, we would do so as:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now if we plot the same chart again, we see its bigger:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n_items&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_19_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alternatively, we can use the <code>%matplotlib notebook</code> magic command, which adds a small widget to visualize charts.</p>
+<p><strong>NOTE</strong>: the <code>%matplotlib notebook</code> magic adds some code to your browser, and might not work as expected. When using this magic, after finishing interacting with one plot, make sure you turn that plot off (by clicking the off button on top of the visualization).  In case it is not working properly, you can click <em>"kernel&gt;restart and clear output"</em> to clean your notebook and start over (with <code>%matplotlib inline</code> this time)</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can plot the chart again <em>(if it doesnt work, try running the magic cell again)</em></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n_items&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+
+<div id="29a86674-f438-4118-a9b1-10e14562d523"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#29a86674-f438-4118-a9b1-10e14562d523');
+/* Put everything inside the global mpl namespace */
+window.mpl = {};
+
+
+mpl.get_websocket_type = function() {
+    if (typeof(WebSocket) !== 'undefined') {
+        return WebSocket;
+    } else if (typeof(MozWebSocket) !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert('Your browser does not have WebSocket support.' +
+              'Please try Chrome, Safari or Firefox ≥ 6. ' +
+              'Firefox 4 and 5 are also supported but you ' +
+              'have to enable WebSockets in about:config.');
+    };
+}
+
+mpl.figure = function(figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = (this.ws.binaryType != undefined);
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById("mpl-warnings");
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent = (
+                "This browser does not support binary websocket messages. " +
+                    "Performance may be slow.");
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = $('<div/>');
+    this._root_extra_style(this.root)
+    this.root.attr('style', 'display: inline-block');
+
+    $(parent_element).append(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen =  function () {
+            fig.send_message("supports_binary", {value: fig.supports_binary});
+            fig.send_message("send_image_mode", {});
+            if (mpl.ratio != 1) {
+                fig.send_message("set_dpi_ratio", {'dpi_ratio': mpl.ratio});
+            }
+            fig.send_message("refresh", {});
+        }
+
+    this.imageObj.onload = function() {
+            if (fig.image_mode == 'full') {
+                // Full images could contain transparency (where diff images
+                // almost always do), so we need to clear the canvas so that
+                // there is no ghosting.
+                fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+            }
+            fig.context.drawImage(fig.imageObj, 0, 0);
+        };
+
+    this.imageObj.onunload = function() {
+        fig.ws.close();
+    }
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+}
+
+mpl.figure.prototype._init_header = function() {
+    var titlebar = $(
+        '<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ' +
+        'ui-helper-clearfix"/>');
+    var titletext = $(
+        '<div class="ui-dialog-title" style="width: 100%; ' +
+        'text-align: center; padding: 3px;"/>');
+    titlebar.append(titletext)
+    this.root.append(titlebar);
+    this.header = titletext[0];
+}
+
+
+
+mpl.figure.prototype._canvas_extra_style = function(canvas_div) {
+
+}
+
+
+mpl.figure.prototype._root_extra_style = function(canvas_div) {
+
+}
+
+mpl.figure.prototype._init_canvas = function() {
+    var fig = this;
+
+    var canvas_div = $('<div/>');
+
+    canvas_div.attr('style', 'position: relative; clear: both; outline: 0');
+
+    function canvas_keyboard_event(event) {
+        return fig.key_event(event, event['data']);
+    }
+
+    canvas_div.keydown('key_press', canvas_keyboard_event);
+    canvas_div.keyup('key_release', canvas_keyboard_event);
+    this.canvas_div = canvas_div
+    this._canvas_extra_style(canvas_div)
+    this.root.append(canvas_div);
+
+    var canvas = $('<canvas/>');
+    canvas.addClass('mpl-canvas');
+    canvas.attr('style', "left: 0; top: 0; z-index: 0; outline: 0")
+
+    this.canvas = canvas[0];
+    this.context = canvas[0].getContext("2d");
+
+    var backingStore = this.context.backingStorePixelRatio ||
+	this.context.webkitBackingStorePixelRatio ||
+	this.context.mozBackingStorePixelRatio ||
+	this.context.msBackingStorePixelRatio ||
+	this.context.oBackingStorePixelRatio ||
+	this.context.backingStorePixelRatio || 1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband = $('<canvas/>');
+    rubberband.attr('style', "position: absolute; left: 0; top: 0; z-index: 1;")
+
+    var pass_mouse_events = true;
+
+    canvas_div.resizable({
+        start: function(event, ui) {
+            pass_mouse_events = false;
+        },
+        resize: function(event, ui) {
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+        stop: function(event, ui) {
+            pass_mouse_events = true;
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+    });
+
+    function mouse_event_fn(event) {
+        if (pass_mouse_events)
+            return fig.mouse_event(event, event['data']);
+    }
+
+    rubberband.mousedown('button_press', mouse_event_fn);
+    rubberband.mouseup('button_release', mouse_event_fn);
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband.mousemove('motion_notify', mouse_event_fn);
+
+    rubberband.mouseenter('figure_enter', mouse_event_fn);
+    rubberband.mouseleave('figure_leave', mouse_event_fn);
+
+    canvas_div.on("wheel", function (event) {
+        event = event.originalEvent;
+        event['data'] = 'scroll'
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        mouse_event_fn(event);
+    });
+
+    canvas_div.append(canvas);
+    canvas_div.append(rubberband);
+
+    this.rubberband = rubberband;
+    this.rubberband_canvas = rubberband[0];
+    this.rubberband_context = rubberband[0].getContext("2d");
+    this.rubberband_context.strokeStyle = "#000000";
+
+    this._resize_canvas = function(width, height) {
+        // Keep the size of the canvas, canvas container, and rubber band
+        // canvas in synch.
+        canvas_div.css('width', width)
+        canvas_div.css('height', height)
+
+        canvas.attr('width', width * mpl.ratio);
+        canvas.attr('height', height * mpl.ratio);
+        canvas.attr('style', 'width: ' + width + 'px; height: ' + height + 'px;');
+
+        rubberband.attr('width', width);
+        rubberband.attr('height', height);
+    }
+
+    // Set the figure to an initial 600x600px, this will subsequently be updated
+    // upon first draw.
+    this._resize_canvas(600, 600);
+
+    // Disable right mouse context menu.
+    $(this.rubberband_canvas).bind("contextmenu",function(e){
+        return false;
+    });
+
+    function set_focus () {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>')
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            // put a spacer in here.
+            continue;
+        }
+        var button = $('<button/>');
+        button.addClass('ui-button ui-widget ui-state-default ui-corner-all ' +
+                        'ui-button-icon-only');
+        button.attr('role', 'button');
+        button.attr('aria-disabled', 'false');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+
+        var icon_img = $('<span/>');
+        icon_img.addClass('ui-button-icon-primary ui-icon');
+        icon_img.addClass(image);
+        icon_img.addClass('ui-corner-all');
+
+        var tooltip_span = $('<span/>');
+        tooltip_span.addClass('ui-button-text');
+        tooltip_span.html(tooltip);
+
+        button.append(icon_img);
+        button.append(tooltip_span);
+
+        nav_element.append(button);
+    }
+
+    var fmt_picker_span = $('<span/>');
+
+    var fmt_picker = $('<select/>');
+    fmt_picker.addClass('mpl-toolbar-option ui-widget ui-widget-content');
+    fmt_picker_span.append(fmt_picker);
+    nav_element.append(fmt_picker_span);
+    this.format_dropdown = fmt_picker[0];
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = $(
+            '<option/>', {selected: fmt === mpl.default_extension}).html(fmt);
+        fmt_picker.append(option)
+    }
+
+    // Add hover states to the ui-buttons
+    $( ".ui-button" ).hover(
+        function() { $(this).addClass("ui-state-hover");},
+        function() { $(this).removeClass("ui-state-hover");}
+    );
+
+    var status_bar = $('<span class="mpl-message"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+}
+
+mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', {'width': x_pixels, 'height': y_pixels});
+}
+
+mpl.figure.prototype.send_message = function(type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+}
+
+mpl.figure.prototype.send_draw_message = function() {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+    }
+}
+
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+}
+
+
+mpl.figure.prototype.handle_resize = function(fig, msg) {
+    var size = msg['size'];
+    if (size[0] != fig.canvas.width || size[1] != fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1]);
+        fig.send_message("refresh", {});
+    };
+}
+
+mpl.figure.prototype.handle_rubberband = function(fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0, 0, fig.canvas.width, fig.canvas.height);
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+}
+
+mpl.figure.prototype.handle_figure_label = function(fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+}
+
+mpl.figure.prototype.handle_cursor = function(fig, msg) {
+    var cursor = msg['cursor'];
+    switch(cursor)
+    {
+    case 0:
+        cursor = 'pointer';
+        break;
+    case 1:
+        cursor = 'default';
+        break;
+    case 2:
+        cursor = 'crosshair';
+        break;
+    case 3:
+        cursor = 'move';
+        break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+}
+
+mpl.figure.prototype.handle_message = function(fig, msg) {
+    fig.message.textContent = msg['message'];
+}
+
+mpl.figure.prototype.handle_draw = function(fig, msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+}
+
+mpl.figure.prototype.handle_image_mode = function(fig, msg) {
+    fig.image_mode = msg['mode'];
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Called whenever the canvas gets updated.
+    this.send_message("ack", {});
+}
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function(fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = "image/png";
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src);
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data);
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+        else if (typeof evt.data === 'string' && evt.data.slice(0, 21) == "data:image/png;base64") {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig["handle_" + msg_type];
+        } catch (e) {
+            console.log("No handler for the '" + msg_type + "' message type: ", msg);
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log("Exception inside the 'handler_" + msg_type + "' callback:", e, e.stack, msg);
+            }
+        }
+    };
+}
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function(e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e)
+        e = window.event;
+    if (e.target)
+        targ = e.target;
+    else if (e.srcElement)
+        targ = e.srcElement;
+    if (targ.nodeType == 3) // defeat Safari bug
+        targ = targ.parentNode;
+
+    // jQuery normalizes the pageX and pageY
+    // pageX,Y are the mouse positions relative to the document
+    // offset() returns the position of the element relative to the document
+    var x = e.pageX - $(targ).offset().left;
+    var y = e.pageY - $(targ).offset().top;
+
+    return {"x": x, "y": y};
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys (original) {
+  return Object.keys(original).reduce(function (obj, key) {
+    if (typeof original[key] !== 'object')
+        obj[key] = original[key]
+    return obj;
+  }, {});
+}
+
+mpl.figure.prototype.mouse_event = function(event, name) {
+    var canvas_pos = mpl.findpos(event)
+
+    if (name === 'button_press')
+    {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {x: x, y: y, button: event.button,
+                             step: event.step,
+                             guiEvent: simpleKeys(event)});
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    // Handle any extra behaviour associated with a key event
+}
+
+mpl.figure.prototype.key_event = function(event, name) {
+
+    // Prevent repeat events
+    if (name == 'key_press')
+    {
+        if (event.which === this._key)
+            return;
+        else
+            this._key = event.which;
+    }
+    if (name == 'key_release')
+        this._key = null;
+
+    var value = '';
+    if (event.ctrlKey && event.which != 17)
+        value += "ctrl+";
+    if (event.altKey && event.which != 18)
+        value += "alt+";
+    if (event.shiftKey && event.which != 16)
+        value += "shift+";
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, {key: value,
+                             guiEvent: simpleKeys(event)});
+    return false;
+}
+
+mpl.figure.prototype.toolbar_button_onclick = function(name) {
+    if (name == 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message("toolbar_button", {name: name});
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function(tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Pan axes with left mouse, zoom with right", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "pdf", "png", "ps", "raw", "svg"];
+
+mpl.default_extension = "png";var comm_websocket_adapter = function(comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function() {
+        comm.close()
+    };
+    ws.send = function(m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function(msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data'])
+    });
+    return ws;
+}
+
+mpl.mpl_figure_comm = function(comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = $("#" + id);
+    var ws_proxy = comm_websocket_adapter(comm)
+
+    function ondownload(figure, format) {
+        window.open(figure.imageObj.src);
+    }
+
+    var fig = new mpl.figure(id, ws_proxy,
+                           ondownload,
+                           element.get(0));
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element.get(0);
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error("Failed to find cell for figure", id, fig);
+        return;
+    }
+
+    var output_index = fig.cell_info[2]
+    var cell = fig.cell_info[0];
+
+};
+
+mpl.figure.prototype.handle_close = function(fig, msg) {
+    var width = fig.canvas.width/mpl.ratio
+    fig.root.unbind('remove')
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable()
+    $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
+    fig.close_ws(fig, msg);
+}
+
+mpl.figure.prototype.close_ws = function(fig, msg){
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+}
+
+mpl.figure.prototype.push_to_output = function(remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width/mpl.ratio
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] = '<img src="' + dataURL + '" width="' + width + '">';
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message("ack", {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () { fig.push_to_output() }, 1000);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>')
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items){
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) { continue; };
+
+        var button = $('<button class="btn btn-default" href="#" title="' + name + '"><i class="fa ' + image + ' fa-lg"></i></button>');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+        nav_element.append(button);
+    }
+
+    // Add the status bar.
+    var status_bar = $('<span class="mpl-message" style="text-align:right; float: right;"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+
+    // Add the close button to the window.
+    var buttongrp = $('<div class="btn-group inline pull-right"></div>');
+    var button = $('<button class="btn btn-mini btn-primary" href="#" title="Stop Interaction"><i class="fa fa-power-off icon-remove icon-large"></i></button>');
+    button.click(function (evt) { fig.handle_close(fig, {}); } );
+    button.mouseover('Stop Interaction', toolbar_mouse_event);
+    buttongrp.append(button);
+    var titlebar = this.root.find($('.ui-dialog-titlebar'));
+    titlebar.prepend(buttongrp);
+}
+
+mpl.figure.prototype._root_extra_style = function(el){
+    var fig = this
+    el.on("remove", function(){
+	fig.close_ws(fig, {});
+    });
+}
+
+mpl.figure.prototype._canvas_extra_style = function(el){
+    // this is important to make the div 'focusable
+    el.attr('tabindex', 0)
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    }
+    else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager)
+        manager = IPython.keyboard_manager;
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which == 13) {
+        this.canvas_div.blur();
+        event.shiftKey = false;
+        // Send a "J" for go to next cell
+        event.which = 74;
+        event.keyCode = 74;
+        manager.command_mode();
+        manager.handle_keydown(event);
+    }
+}
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    fig.ondownload(fig, null);
+}
+
+
+mpl.find_output_cell = function(html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i=0; i<ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code'){
+            for (var j=0; j<cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] == html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+}
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel != null) {
+    IPython.notebook.kernel.comm_manager.register_target('matplotlib', mpl.mpl_figure_comm);
+}
+
+</script>
+</div>
+
+</div>
+</div>
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="data:image/png;base64,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" width="432">
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When you use the notebook magic, you get to resize, zoom, and export the image. One important point to note is that the notebook magic embedds a widget in the notebook, and <strong>we need to shut it down every time we do a chart (by clicking the on/off button on top of the widget)</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Generally, when we are plotting for our own use (and we do not need to make very big plots), using <code>%matplotlib inline</code> and setting a decent plot size is simpler and works.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;n_items&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_27_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No surprises here, we see that there is a linear relationship between the number of items purchased and the sales revenue</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see for example how do sales relate to the day of week</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;day_of_week&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sales&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_30_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that sales are generally equaly distributed, except a little uptick on Thursdays and no sales at all on Saturday!</p>
+<p>Here we can see how data visualization can help us with the data QA (Data Quality Assurance), and can help us detect inconsistencies or errors in the data. In this case we would need to make sure everything is correct, since online sales dont usually stop on saturdays.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For the types of charts that pandas supports we can use a different function to plot them using the <code>kind</code> argument.</p>
+<p>For example we can plot the same scatter plot as above by doing:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;day_of_week&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sales&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_33_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Line-Chart">Line Chart<a class="anchor-link" href="#Line-Chart"> </a></h1><p>We use line charts generally when we want to see the trend of one (or many variables) over time. For example, lets say we want to see the sales in germany compared to france over time. Pandas <code>plot</code> method tries a line plot by default.</p>
+<p>We can set the index of the dataframe to the date and pandas plot method will automatically pick it up as the x axis</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_indexed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>sales</th>
+      <th>n_items</th>
+      <th>n_orders</th>
+      <th>day_of_week</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-12-01</th>
+      <td>Australia</td>
+      <td>358.25</td>
+      <td>107</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2010-12-08</th>
+      <td>Australia</td>
+      <td>258.90</td>
+      <td>214</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2010-12-17</th>
+      <td>Australia</td>
+      <td>415.70</td>
+      <td>146</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2011-01-06</th>
+      <td>Australia</td>
+      <td>7154.38</td>
+      <td>4802</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2011-01-10</th>
+      <td>Australia</td>
+      <td>81.60</td>
+      <td>96</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pandas plotting library is just a thin wrapper around matplotlib. Matplotlib has a somewhat convoluted api, and pandas makes plotting common charts much easier.</p>
+<p>For example, here we call directly matplotlib <code>legend</code> to display the legend on top of pandas plots</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_indexed</span><span class="p">[</span><span class="n">data_indexed</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;Germany&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
+<span class="n">data_indexed</span><span class="p">[</span><span class="n">data_indexed</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;France&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_38_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We see that sales numbers in France and Germany are generally similar. And that each country has a spike of sales at a certain day in 2011</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Using matplotlib api</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes, we want to display some information in a way that pandas <code>plot</code> method doesn't allow us to. In those situations we can use matplotlib plt.plot method directly as well. This gives us much more flexibility regarding how we can display the data</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">n_items</span><span class="p">,</span>  <span class="c1"># plot this series as the x</span>
+             <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="p">,</span>    <span class="c1">#plot this series as the y</span>
+             <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>   <span class="c1">#make the markers circle shaped</span>
+             <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">#dont connect the dots with lines</span>
+             <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>         <span class="c1"># size of the markers (in pixels)</span>
+             <span class="n">label</span><span class="o">=</span><span class="n">country</span> <span class="c1"># use the country as the label of this plot</span>
+            <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_42_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bar/Column-chart">Bar/Column chart<a class="anchor-link" href="#Bar/Column-chart"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use bar/column charts to perform comparisons of discrete quantities. Normally you use the horizontal bars to compare across elements without a natural order (categorical variable) and Column charts (vertical bars) to compare among an ordinal variable.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># same thing as data.groupby(&#39;country&#39;)[&#39;sales&#39;].sum().plot(kind=&quot;barh&quot;);</span>
+<span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_45_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we can see that the top countries in terms of sales on the dataset are Netherlands, Germany and EIRE. This does not mean that they are the top countries in terms of sales, because remember, the dataset consist of country + date.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Histograms">Histograms<a class="anchor-link" href="#Histograms"> </a></h1><p>We can use histograms to make sure that nothing is fishy with the data, as well as to gain an understanding of its distribution. For example, we can use it to see how are sales distributed in EIRE</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># same thing as data[data.country==&#39;EIRE&#39;].sales.plot(kind=&quot;hist&quot;);</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;EIRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_48_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we can see that, even though the big majority of sales days in EIRE are less than 2500 GBP, some days there are significantly higher sales.</p>
+<p>We can limit the extend of the xaxis of a histogram by passing the parameter <code>xlim</code> to the plot</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;EIRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_50_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also specify the number of <em>groups</em> of the histogram by using the paramenter <code>bins</code></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;EIRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_52_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we see that the most common daily sales revenue in EIRE is 1000 GBP per day</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="BoxPlot">BoxPlot<a class="anchor-link" href="#BoxPlot"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The box plot (also called plot and whisker diagram) is a good chart when you want to compare how a variable is distributed among different groups. For example, on the chart of the left, we are analyzing the weight of all different car models manufactured in 2004 and comparing between the region of origin of those cars</p>
+<p>Outliers on the boxplot (those points beyond the whiskers) are usually considered as being 1.5<em> IQ from Quartile 1 (low outliers) and 1.5</em>IQ from Quartile 3 (high outliers)</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># kind=&quot;boxplot&quot; doesnt work since its not part of the pandas.plot api for legacy reasons</span>
+<span class="n">data</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;sales&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_56_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we see that the top countries in terms of points (France, Germany and Eire) have a significant number of outliers in terms of sales. Netherlands on the other hand, has sales that are more stable (probably a smaller number of bigger orders)</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes we want to show a boxplot horizontally, we can do so by using the argument <code>vert=False</code></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;sales&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_59_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Customizing-plots">Customizing plots<a class="anchor-link" href="#Customizing-plots"> </a></h1><p>Using pandas <code>.plot</code> as it is is good enough for when doing data analysis (remember, data understanding is one of the main goals of data visualization).</p>
+<p>However, when we want to share a chart with someone else (wether that person is another data scientist or someone without a technical background), we need to take more steps in order to provide the most effective visualizations.</p>
+<p><img src="https://imgs.xkcd.com/comics/convincing.png" alt="xkcd labels strip"></p>
+<p>When producing charts for external use, always remember:</p>
+<ul>
+<li>Add a title describing the chart</li>
+<li>Add labels for all the axes.</li>
+<li>Check the axes limits to make sure they are appropriate and help convey the right information</li>
+<li>Add legends if necessary (when dealing with multiple groups)</li>
+<li>Make sure the color palette you choose will display properly on the medium where it is going to be consumed (for example, which color is the background where the chart will be inserted affects how the chart is visualized)</li>
+<li>It is good practice, specially if the chart is to be displayed publicly (and thus probably isolated from its original document) to add a footnote to the chart adding the source of the data. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Styles">Styles<a class="anchor-link" href="#Styles"> </a></h4><p>Pandas uses matplotlib as a plotting backend. Thus, we can use matplotlib styles and api to modify our</p>
+<p>We can change the style and make use of all of matplotlib styles</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;tableau-colorblind10&#39;,
+ &#39;ggplot&#39;,
+ &#39;fast&#39;,
+ &#39;seaborn&#39;,
+ &#39;Solarize_Light2&#39;,
+ &#39;classic&#39;,
+ &#39;seaborn-ticks&#39;,
+ &#39;fivethirtyeight&#39;,
+ &#39;seaborn-deep&#39;,
+ &#39;grayscale&#39;,
+ &#39;seaborn-dark-palette&#39;,
+ &#39;seaborn-talk&#39;,
+ &#39;bmh&#39;,
+ &#39;seaborn-paper&#39;,
+ &#39;seaborn-dark&#39;,
+ &#39;seaborn-bright&#39;,
+ &#39;dark_background&#39;,
+ &#39;seaborn-notebook&#39;,
+ &#39;_classic_test&#39;,
+ &#39;seaborn-pastel&#39;,
+ &#39;seaborn-white&#39;,
+ &#39;seaborn-muted&#39;,
+ &#39;seaborn-colorblind&#39;,
+ &#39;seaborn-whitegrid&#39;,
+ &#39;seaborn-poster&#39;,
+ &#39;seaborn-darkgrid&#39;]</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, we can change the style of the plots to the style for the package <code>seaborn</code></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;EIRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_65_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that now the plot has a completely different set of fonts, color and sizes</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course we can bypass the applied style  by specifying parameters in the plot. For example if I want to plot the same histograme in a nice pink color I would do it like this:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;EIRE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_68_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>BE WARNED!</strong></p>
+<p>Different styles might not render the same results</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;sales&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_70_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, we see that the <code>seaborn</code> style does not display the outliers on the boxplots, so you might be mislead into believing that there are no outliers just because of how the plot style is setup!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Labels-and-titles">Labels and titles<a class="anchor-link" href="#Labels-and-titles"> </a></h1><p>Finally, if we wanted to share our plot with someone else (to display on a paper or to share with a client) we can make use of matplotlib customization to make our plot more explicit and nicer looking</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, we can choose the style for another library <em>(ggpy, previously called ggplot)</em></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we customize the chart to make it ready to be shared. We apply the following modifications:</p>
+<ul>
+<li>We use <code>label</code> inside the <code>plot</code> function to asign a label to each plot. This will draw each line a different color, and will display their name on the legend.</li>
+<li>We activate the plot legend with <code>plt.legend</code></li>
+<li>We add a title with <code>plt.legend</code> (size 25)</li>
+<li>We set the range for the y-axis to (0, 12350)</li>
+<li>We add a legend for the x axis with <code>plt.xlabel</code> (size 20 inches)</li>
+<li>We add a legend for the y axis with <code>plt.ylabel</code> (size 20 inches)</li>
+<li>We add text on a specific position (Starting 30% from the left and 1% from the bottom)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_indexed</span><span class="p">[</span><span class="n">data_indexed</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;Germany&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
+<span class="n">data_indexed</span><span class="p">[</span><span class="n">data_indexed</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="s1">&#39;France&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12350</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Daily sales in France and Germany&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Sales (GPB)&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">,</span> <span class="s2">&quot;Source: Online Retail Dataset Transactions between 01/12/2010 and 09/12/2011&quot;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_76_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Histogram-with-a-boxplot-on-top">Histogram with a boxplot on top<a class="anchor-link" href="#Histogram-with-a-boxplot-on-top"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import library and dataset</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+ 
+<span class="c1"># Cut the window in 2 parts</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax_box</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;height_ratios&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">.</span><span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">85</span><span class="p">)})</span>
+ 
+<span class="c1"># Add a graph in each part</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_box</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_hist</span><span class="p">)</span>
+ 
+<span class="c1"># Remove x axis name for the boxplot</span>
+<span class="n">ax_box</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../images/Visualization/Learning_notebook_78_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
+            </div>
+            <nav class="c-page__nav">
+  
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/features/notebooks.html">
+      〈 <span class="u-margin-right-tiny"></span> Jupyter notebooks
+    </a>
+  
+
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="">
+       <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+            <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
