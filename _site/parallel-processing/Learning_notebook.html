@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Features</title>
-  <meta name="description" content="# FeaturesWhat the hell is thisThis is a short demonstration textbook to show the general layout / style of textbooks builtwith Jupyter and Jekyll. The markd...">
+  <title>Parallel Processing</title>
+  <meta name="description" content="        Modin Pandas By default, Pandas executes its functions as a single process using a single CPU core. That works just fine for smaller datasets since y...">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//content/features/features.html">
+  <link rel="canonical" href="http://0.0.0.0:4000//parallel-processing/Learning_notebook.html">
   <link rel="alternate" type="application/rss+xml" title="YOUR BOOK NAME" href="http://0.0.0.0:4000//feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000//content/features/features.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000//parallel-processing/Learning_notebook.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Features" />
-<meta property="og:description" content="# FeaturesWhat the hell is thisThis is a short demonstration textbook to show the general layout / style of textbooks builtwith Jupyter and Jekyll. The markd..." />
+<meta property="og:title"       content="Parallel Processing" />
+<meta property="og:description" content="        Modin Pandas By default, Pandas executes its functions as a single process using a single CPU core. That works just fine for smaller datasets since y..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -24,11 +24,11 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://0.0.0.0:4000//content/features/features.html",
-  "headline": "Features",
+  "mainEntityOfPage": "http://0.0.0.0:4000//parallel-processing/Learning_notebook.html",
+  "headline": "Parallel Processing",
   "datePublished": "2019-12-09T12:37:08-06:00",
   "dateModified": "2019-12-09T12:37:08-06:00",
-  "description": "# FeaturesWhat the hell is thisThis is a short demonstration textbook to show the general layout / style of textbooks builtwith Jupyter and Jekyll. The markd...",
+  "description": "        Modin Pandas By default, Pandas executes its functions as a single process using a single CPU core. That works just fine for smaller datasets since y...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -505,7 +505,7 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/features/features.html"
         >
           
@@ -604,10 +604,20 @@ initFunction(initPrint)
 <div class="download-buttons-dropdown">
     <button id="dropdown-button-trigger" class="interact-button"><i class="fa fa-download"></i></button>
     <div class="download-buttons">
+        <a href="/content/parallel-processing/Learning_notebook.ipynb" download>
+        <button id="interact-button-download" class="interact-button">ORIG</button>
+        </a>
         
         <a id="interact-button-print"><button id="interact-button-download" class="interact-button">PDF</button></a>
     </div>
 </div>
+
+  <button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+  
+  
+  
+
 
 </div>
 
@@ -623,30 +633,247 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              <h1 id="features">Features</h1>
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
 
-<p>What the hell is this</p>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modin-Pandas">Modin Pandas<a class="anchor-link" href="#Modin-Pandas"> </a></h1>
+</div>
+</div>
+</div>
+</div>
 
-<p>This is a short demonstration textbook to show the general layout / style of textbooks built
-with Jupyter and Jekyll. The markdown files for <em>this</em> page (and others in the textbook) is generated from the notebooks
-with the <code class="highlighter-rouge">scripts/generate_textbook.py</code> script, which is called when you run <code class="highlighter-rouge">make book</code>.</p>
+<div class="jb_cell">
 
-<p>The content for the book is contained in a folder in the book’s repository called <code class="highlighter-rouge">content/</code>. It has a
-combination of markdown and Jupyter notebooks. This content is rendered into the textbook that you see here!</p>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By default, Pandas executes its functions as a single process using a single CPU core. That works just fine for smaller datasets since you might not notice much of a difference in speed. But with larger datasets, and so many more calculations to make, speed starts to take a major hit when using only a single core. It’s doing just one calculation at a time for a dataset that can have millions or even billions of rows.</p>
+<p>Yet most modern machines made for Data Science have at least 2 CPU cores. That means, for the example of 2 CPU cores, that 50% or more of your computer’s processing power won’t be doing anything by default when using Pandas. The situation gets even worse when you get to 4 cores (modern Intel i5) or 6 cores (modern Intel i7). Pandas simply wasn’t designed to use that computing power effectively.</p>
+<p>Modin is a new library designed to accelerate Pandas by automatically distributing the computation across all of the system’s available CPU cores. With that, Modin claims to be able to get nearly linear speedup to the number of CPU cores on your system for Pandas DataFrames of any size.</p>
 
-<p>To begin, click on one of the chapter sections in the sidebar to the left. The first section demonstrates some
-simple functionality of this repository, while the following chapters contain a subset of content from the
-<a href="https://inferentialthinking.com">Foundations in Data Science</a>.</p>
+</div>
+</div>
+</div>
+</div>
 
-<h2 id="quickstart">Quickstart</h2>
+<div class="jb_cell">
 
-<p>This chapter shows a couple ways to add content to your course textbook. Click on the section headers
-to the left, or on the “next” button below in order to read further.</p>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Install">Install<a class="anchor-link" href="#Install"> </a></h1>
+</div>
+</div>
+</div>
+</div>
 
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install modin<span class="o">[</span>ray<span class="o">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: modin[ray] in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (0.6.3)
+Requirement already satisfied: pandas==0.25.3 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from modin[ray]) (0.25.3)
+Requirement already satisfied: ray==0.7.3; extra == &#34;ray&#34; in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from modin[ray]) (0.7.3)
+Requirement already satisfied: numpy&gt;=1.13.3 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (1.14.6)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (2.8.0)
+Requirement already satisfied: pytz&gt;=2017.2 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (2019.1)
+Requirement already satisfied: click in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (7.0)
+Requirement already satisfied: protobuf&gt;=3.8.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.11.1)
+Requirement already satisfied: colorama in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.4.3)
+Requirement already satisfied: pyyaml in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (5.1)
+Requirement already satisfied: redis in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.3.11)
+Requirement already satisfied: filelock in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.0.12)
+Requirement already satisfied: funcsigs in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.0.2)
+Requirement already satisfied: pytest in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (5.1.2)
+Requirement already satisfied: six&gt;=1.0.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.12.0)
+Requirement already satisfied: setuptools in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from protobuf&gt;=3.8.0-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (41.0.1)
+Requirement already satisfied: importlib-metadata&gt;=0.12; python_version &lt; &#34;3.8&#34; in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.21)
+Requirement already satisfied: wcwidth in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.1.7)
+Requirement already satisfied: pluggy&lt;1.0,&gt;=0.12 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.13.0)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (7.2.0)
+Requirement already satisfied: atomicwrites&gt;=1.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.3.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (19.1.0)
+Requirement already satisfied: packaging in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (19.0)
+Requirement already satisfied: py&gt;=1.5.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.8.0)
+Requirement already satisfied: zipp&gt;=0.5 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from importlib-metadata&gt;=0.12; python_version &lt; &#34;3.8&#34;-&gt;pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.6.0)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from packaging-&gt;pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (2.4.0)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note:</strong> By the time this tutorial was done the Dask version was still on trial</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Benchmarks-and-Examples">Benchmarks and Examples<a class="anchor-link" href="#Benchmarks-and-Examples"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Practical-Tips-for-using-Modin">Practical Tips for using Modin<a class="anchor-link" href="#Practical-Tips-for-using-Modin"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By default, Modin will use all of the CPU cores available on your machine. There may be some cases where you wish to limit the number of CPU cores</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">num_cpus</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">modin.pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2019-12-09 18:25:25,016	WARNING worker.py:1373 -- WARNING: Not updating worker name since `setproctitle` is not installed. Install this with `pip install setproctitle` (or ray[debug]) to enable monitoring of worker processes.
+2019-12-09 18:25:25,018	INFO node.py:498 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2019-12-09_18-25-25_017761_24230/logs.
+2019-12-09 18:25:25,125	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:46329 to respond...
+2019-12-09 18:25:25,290	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:61395 to respond...
+2019-12-09 18:25:25,317	INFO services.py:809 -- Starting Redis shard with 3.34 GB max memory.
+2019-12-09 18:25:25,396	INFO node.py:512 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2019-12-09_18-25-25_017761_24230/logs.
+2019-12-09 18:25:25,400	WARNING services.py:1330 -- WARNING: The default object store size of 5.01 GB will use more than 50% of the available memory on this node (6.22 GB). Consider setting the object store memory manually to a smaller size to avoid memory contention with other applications.
+2019-12-09 18:25:25,402	INFO services.py:1475 -- Starting the Plasma object store with 5.01 GB memory using /dev/shm.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When working with big data, it’s not uncommon for the size of the dataset to exceed the amount of memory (RAM) on your system. Modin has a specific flag that we can set to true which will enable its out of core mode. Out of core basically means that Modin will use your disk as an overflow storage for your memory, allowing you to work with datasets far bigger than your RAM size. We can set the following environment variable to enable this functionality:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">export</span> <span class="n">MODIN_OUT_OF_CORE</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-5-c87e6ac53963&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
+<span class="ansi-red-fg">    export MODIN_OUT_OF_CORE=true</span>
+                           ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
             </div>
             <nav class="c-page__nav">
   
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/features/notebooks.html">
+      〈 <span class="u-margin-right-tiny"></span> Jupyter notebooks
+    </a>
+  
 
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="">
+       <span class="u-margin-right-tiny"></span> 〉
+    </a>
   
 </nav>
 

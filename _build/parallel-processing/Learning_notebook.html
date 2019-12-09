@@ -1,0 +1,248 @@
+---
+redirect_from:
+  - "/parallel-processing/learning-notebook"
+interact_link: content/parallel-processing/Learning_notebook.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Parallel Processing
+prev_page:
+  url: /features/notebooks.html
+  title: |-
+    Jupyter notebooks
+next_page:
+  url: 
+  title: |-
+    
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modin-Pandas">Modin Pandas<a class="anchor-link" href="#Modin-Pandas"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By default, Pandas executes its functions as a single process using a single CPU core. That works just fine for smaller datasets since you might not notice much of a difference in speed. But with larger datasets, and so many more calculations to make, speed starts to take a major hit when using only a single core. It’s doing just one calculation at a time for a dataset that can have millions or even billions of rows.</p>
+<p>Yet most modern machines made for Data Science have at least 2 CPU cores. That means, for the example of 2 CPU cores, that 50% or more of your computer’s processing power won’t be doing anything by default when using Pandas. The situation gets even worse when you get to 4 cores (modern Intel i5) or 6 cores (modern Intel i7). Pandas simply wasn’t designed to use that computing power effectively.</p>
+<p>Modin is a new library designed to accelerate Pandas by automatically distributing the computation across all of the system’s available CPU cores. With that, Modin claims to be able to get nearly linear speedup to the number of CPU cores on your system for Pandas DataFrames of any size.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Install">Install<a class="anchor-link" href="#Install"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install modin<span class="o">[</span>ray<span class="o">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: modin[ray] in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (0.6.3)
+Requirement already satisfied: pandas==0.25.3 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from modin[ray]) (0.25.3)
+Requirement already satisfied: ray==0.7.3; extra == &#34;ray&#34; in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from modin[ray]) (0.7.3)
+Requirement already satisfied: numpy&gt;=1.13.3 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (1.14.6)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (2.8.0)
+Requirement already satisfied: pytz&gt;=2017.2 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pandas==0.25.3-&gt;modin[ray]) (2019.1)
+Requirement already satisfied: click in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (7.0)
+Requirement already satisfied: protobuf&gt;=3.8.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.11.1)
+Requirement already satisfied: colorama in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.4.3)
+Requirement already satisfied: pyyaml in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (5.1)
+Requirement already satisfied: redis in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.3.11)
+Requirement already satisfied: filelock in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (3.0.12)
+Requirement already satisfied: funcsigs in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.0.2)
+Requirement already satisfied: pytest in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (5.1.2)
+Requirement already satisfied: six&gt;=1.0.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.12.0)
+Requirement already satisfied: setuptools in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from protobuf&gt;=3.8.0-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (41.0.1)
+Requirement already satisfied: importlib-metadata&gt;=0.12; python_version &lt; &#34;3.8&#34; in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.21)
+Requirement already satisfied: wcwidth in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.1.7)
+Requirement already satisfied: pluggy&lt;1.0,&gt;=0.12 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.13.0)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (7.2.0)
+Requirement already satisfied: atomicwrites&gt;=1.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.3.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (19.1.0)
+Requirement already satisfied: packaging in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (19.0)
+Requirement already satisfied: py&gt;=1.5.0 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (1.8.0)
+Requirement already satisfied: zipp&gt;=0.5 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from importlib-metadata&gt;=0.12; python_version &lt; &#34;3.8&#34;-&gt;pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (0.6.0)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in /home/calado/.virtualenvs/dl4cv/lib/python3.6/site-packages (from packaging-&gt;pytest-&gt;ray==0.7.3; extra == &#34;ray&#34;-&gt;modin[ray]) (2.4.0)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note:</strong> By the time this tutorial was done the Dask version was still on trial</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Benchmarks-and-Examples">Benchmarks and Examples<a class="anchor-link" href="#Benchmarks-and-Examples"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Practical-Tips-for-using-Modin">Practical Tips for using Modin<a class="anchor-link" href="#Practical-Tips-for-using-Modin"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By default, Modin will use all of the CPU cores available on your machine. There may be some cases where you wish to limit the number of CPU cores</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">num_cpus</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">modin.pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2019-12-09 18:25:25,016	WARNING worker.py:1373 -- WARNING: Not updating worker name since `setproctitle` is not installed. Install this with `pip install setproctitle` (or ray[debug]) to enable monitoring of worker processes.
+2019-12-09 18:25:25,018	INFO node.py:498 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2019-12-09_18-25-25_017761_24230/logs.
+2019-12-09 18:25:25,125	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:46329 to respond...
+2019-12-09 18:25:25,290	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:61395 to respond...
+2019-12-09 18:25:25,317	INFO services.py:809 -- Starting Redis shard with 3.34 GB max memory.
+2019-12-09 18:25:25,396	INFO node.py:512 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2019-12-09_18-25-25_017761_24230/logs.
+2019-12-09 18:25:25,400	WARNING services.py:1330 -- WARNING: The default object store size of 5.01 GB will use more than 50% of the available memory on this node (6.22 GB). Consider setting the object store memory manually to a smaller size to avoid memory contention with other applications.
+2019-12-09 18:25:25,402	INFO services.py:1475 -- Starting the Plasma object store with 5.01 GB memory using /dev/shm.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When working with big data, it’s not uncommon for the size of the dataset to exceed the amount of memory (RAM) on your system. Modin has a specific flag that we can set to true which will enable its out of core mode. Out of core basically means that Modin will use your disk as an overflow storage for your memory, allowing you to work with datasets far bigger than your RAM size. We can set the following environment variable to enable this functionality:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">export</span> <span class="n">MODIN_OUT_OF_CORE</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-5-c87e6ac53963&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
+<span class="ansi-red-fg">    export MODIN_OUT_OF_CORE=true</span>
+                           ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

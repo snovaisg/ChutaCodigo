@@ -54,3 +54,7 @@
   - title: Jupyter notebooks
     url: /features/notebooks
     not_numbered: true
+
+- title: Parallel Processing
+  url: /parallel-processing/Learning_notebook/
+  not_numbered: true
