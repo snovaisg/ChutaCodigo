@@ -1,0 +1,43 @@
+[LabApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[LabApp | INFO] Loading the validate_assignment nbgrader serverextension
+[LabApp | WARNING] JupyterLab server extension not enabled, manually loading...
+[LabApp | INFO] JupyterLab extension loaded from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyterlab
+[LabApp | INFO] JupyterLab application directory is /Library/Frameworks/Python.framework/Versions/3.7/share/jupyter/lab
+[LabApp | INFO] Serving notebooks from local directory: /Users/simaonovais/Documents/GitHub/ChutaCodigo/content/Pandas
+[LabApp | INFO] The Jupyter Notebook is running at:
+[LabApp | INFO] http://localhost:8889/?token=5fe31bcc138f64dceb39c52b24338e2147c3bcf2d5abc612
+[LabApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[LabApp | CRITICAL] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/simaonovais/Library/Jupyter/runtime/nbserver-78450-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/?token=5fe31bcc138f64dceb39c52b24338e2147c3bcf2d5abc612
+[LabApp | WARNING] Could not determine jupyterlab build status without nodejs
+[LabApp | WARNING] 404 GET /api/contents/S01%20-%20Bootcamp%20and%20Binary%20Classification/SLU01%20-%20Pandas%20101?1574975973035 (::1): No such file or directory: S01 - Bootcamp and Binary Classification/SLU01 - Pandas 101
+[LabApp | WARNING] No such file or directory: S01 - Bootcamp and Binary Classification/SLU01 - Pandas 101
+[LabApp | WARNING] 404 GET /api/contents/S01%20-%20Bootcamp%20and%20Binary%20Classification/SLU01%20-%20Pandas%20101?1574975973035 (::1) 2.73ms referer=http://localhost:8889/lab
+[LabApp | WARNING] 404 GET /api/contents/S01%20-%20Bootcamp%20and%20Binary%20Classification/SLU01%20-%20Pandas%20101/Learning%20notebook.ipynb?content=0&1574975973037 (::1): No such file or directory: S01 - Bootcamp and Binary Classification/SLU01 - Pandas 101/Learning notebook.ipynb
+[LabApp | WARNING] No such file or directory: S01 - Bootcamp and Binary Classification/SLU01 - Pandas 101/Learning notebook.ipynb
+[LabApp | WARNING] 404 GET /api/contents/S01%20-%20Bootcamp%20and%20Binary%20Classification/SLU01%20-%20Pandas%20101/Learning%20notebook.ipynb?content=0&1574975973037 (::1) 2.43ms referer=http://localhost:8889/lab
+[LabApp | INFO] Creating new notebook in /
+[LabApp | INFO] Saving Untitled.ipynb
+[LabApp | INFO] Kernel started: 6d64f28c-9107-4922-a34e-56682b9c1a44
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 6d64f28c-9107-4922-a34e-56682b9c1a44
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 6d64f28c-9107-4922-a34e-56682b9c1a44
+[LabApp | INFO] Saving file at /Pandas.ipynb
+[LabApp | INFO] Saving Pandas.ipynb
+[LabApp | INFO] Saving file at /Pandas.ipynb
+[LabApp | INFO] Saving Pandas.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb

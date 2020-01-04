@@ -36,6 +36,10 @@
 - title: Search
   search: true
 
+- title: Pandas Basics
+  url: /Pandas/PandasBasics
+  not_numbered: true
+
 # Divider for meta-pages and content page
 - divider: true
 

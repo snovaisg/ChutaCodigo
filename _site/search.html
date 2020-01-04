@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://0.0.0.0:4000//search",
   "headline": "Search the site",
-  "datePublished": "2019-11-27T09:06:50-06:00",
-  "dateModified": "2019-11-27T09:06:50-06:00",
+  "datePublished": "2020-01-04T06:20:15-06:00",
+  "dateModified": "2020-01-04T06:20:15-06:00",
   "description": "        ",
   "author": {
     "@type": "Person",
@@ -490,6 +490,27 @@ initFunction(initPrint)
     
       
       
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/Pandas/PandasBasics.html"
+        >
+          
+          Pandas Bascis
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
         <li class="c-sidebar__divider"></li>
         
       
@@ -610,10 +631,18 @@ initFunction(initPrint)
 <script>
     // Add the lunr store since we will now search it
     var store = [{
+        "title": "Pandas Bascis",
+        
+        "excerpt":
+            "Pandas This is the data manipulation library for python. import pandas as pd Series Create a Pandas Series while specifying the index pd.Series(data=[&quot;Larry&quot;, &quot;Bill&quot;, &quot;Mark&quot;, &quot;Steve&quot;], index=[&quot;Google&quot;, &quot;Microsoft&quot;, &quot;Facebook&quot;, &quot;Apple&quot;]) Google Larry Microsoft Bill Facebook Mark Apple Steve dtype: object Now using a dictionary. The keys of the dictionary will become the index of the series! my_dict = {&quot;Google&quot;: &quot;Larry&quot;, &quot;Microsoft&quot;: &quot;Bill&quot;, &quot;Facebook&quot;: &quot;Mark&quot;, &quot;Apple&quot;: &quot;Steve&quot;} my_series = pd.Series(my_dict) my_series Google Larry Microsoft Bill Facebook Mark Apple Steve dtype: object You can convert a series directly to numpy my_series.index.to_numpy() array([&#39;Google&#39;, &#39;Microsoft&#39;, &#39;Facebook&#39;, &#39;Apple&#39;], dtype=object) DataFrames Simple dataframe. Using index and...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/Pandas/PandasBasics.html",
+        "teaser":null},{
         "title": "Features and customization",
         
         "excerpt":
-            "Features This is a short demonstration textbook to show the general layout / style of textbooks built with Jupyter and Jekyll. The markdown files for this page (and others in the textbook) is generated from the notebooks with the scripts/generate_textbook.py script, which is called when you run make book. The content for the book is contained in a folder in the book's repository called content/. It has a combination of markdown and Jupyter notebooks. This content is rendered into the textbook that you see here! To begin, click on one of the chapter sections in the sidebar to the left....",
+            "Features What the hell is this This is a short demonstration textbook to show the general layout / style of textbooks built with Jupyter and Jekyll. The markdown files for this page (and others in the textbook) is generated from the notebooks with the scripts/generate_textbook.py script, which is called when you run make book. The content for the book is contained in a folder in the book's repository called content/. It has a combination of markdown and Jupyter notebooks. This content is rendered into the textbook that you see here! To begin, click on one of the chapter sections in...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/features/features.html",
@@ -637,7 +666,7 @@ initFunction(initPrint)
         "title": "Home",
         
         "excerpt":
-            "Books with Jupyter and Jekyll Is this really working? but is it really not sure though Jupyter Books lets you build an online book using a collection of Jupyter Notebooks and Markdown files. Its output is similar to the excellent Bookdown tool, and adds extra functionality for people running a Jupyter stack. For an example of a book built with Jupyter Books, see the textbook for Data 100 at UC Berkeley. Here are a few features of Jupyter Books All course content is written in markdown and Jupyter Notebooks, stored in notebooks/ The Jupyter Book repo comes packaged with helper...",
+            "      Books with Jupyter and Jekyll  This Book covers several topics on data science and...  Rules  While developing a new page you have to create a new branch using that page's name. When you think it is finished create a pull request to merge with master and wait for the other contributors to review it.  Acknowledgements  Jupyter Books was originally created by Sam Lau and Chris Holdgraf with support of the UC Berkeley Data Science Education Program and the Berkeley Institute for Data Science.             ",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/intro.html",

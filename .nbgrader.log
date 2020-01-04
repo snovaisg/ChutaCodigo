@@ -1,0 +1,279 @@
+[LabApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[LabApp | INFO] Loading the validate_assignment nbgrader serverextension
+[LabApp | WARNING] JupyterLab server extension not enabled, manually loading...
+[LabApp | INFO] JupyterLab extension loaded from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyterlab
+[LabApp | INFO] JupyterLab application directory is /Library/Frameworks/Python.framework/Versions/3.7/share/jupyter/lab
+[LabApp | INFO] Serving notebooks from local directory: /Users/simaonovais/Documents/Documents – Simao’s MacBook Air/GitHub/ChutaCodigo
+[LabApp | INFO] The Jupyter Notebook is running at:
+[LabApp | INFO] http://localhost:8888/?token=913c5511479a8dfa4dfd0bed80eb2b943e1bc54039820d04
+[LabApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[LabApp | CRITICAL] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/simaonovais/Library/Jupyter/runtime/nbserver-7823-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=913c5511479a8dfa4dfd0bed80eb2b943e1bc54039820d04
+[LabApp | WARNING] 404 GET /apple-touch-icon-precomposed.png (::1) 77.12ms referer=None
+[LabApp | WARNING] 404 GET /apple-touch-icon.png (::1) 2.01ms referer=None
+[LabApp | WARNING] Could not determine jupyterlab build status without nodejs
+[LabApp | WARNING] 404 GET /api/contents/Untitled.ipynb?content=0&1576014576112 (::1): No such file or directory: Untitled.ipynb
+[LabApp | WARNING] No such file or directory: Untitled.ipynb
+[LabApp | WARNING] 404 GET /api/contents/Untitled.ipynb?content=0&1576014576112 (::1) 22.44ms referer=http://localhost:8888/lab
+[LabApp | INFO] Kernel started: 37db6868-4e1e-4e09-82c4-b0bb6ee91d4c
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 37db6868-4e1e-4e09-82c4-b0bb6ee91d4c
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 37db6868-4e1e-4e09-82c4-b0bb6ee91d4c
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] 302 GET / (::1) 0.75ms
+[LabApp | INFO] Starting buffering for 37db6868-4e1e-4e09-82c4-b0bb6ee91d4c:e1f677fa-a412-4053-8a4c-17147a90460c
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'rubberband/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/rubberband/rubberband.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/rubberband/rubberband.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'scroll_down/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/scroll_down/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/scroll_down/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hinterland/hinterland' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hinterland/hinterland.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hinterland/hinterland.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'snippets/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/snippets/snippets.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/snippets/snippets.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'toggle_all_line_numbers/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/toggle_all_line_numbers/main.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/toggle_all_line_numbers/main.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'notify/notify' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/notify/notify.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/notify/notify.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'runtools/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/runtools/runtools.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/runtools/runtools.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'tree-filter/index' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/tree-filter/tree-filter.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/tree-filter/tree-filter.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'table_beautifier/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/table_beautifier/table_beautifier.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/table_beautifier/table_beautifier.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'freeze/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/freeze/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/freeze/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'exercise2/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/exercise2/exercise2.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/exercise2/exercise2.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'execution_dependencies/execution_dependencies' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/execution_dependencies/execution_dependencies.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/execution_dependencies/execution_dependencies.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'skill/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/skill/skill.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/skill/skill.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'splitcell/splitcell' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/splitcell/splitcell.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/splitcell/splitcell.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'autosavetime/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/autosavetime/autosavetime.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/autosavetime/autosavetime.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'select_keymap/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/select_keymap/select_keymap.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/select_keymap/select_keymap.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'livemdpreview/livemdpreview' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/livemdpreview/livemdpreview.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/livemdpreview/livemdpreview.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'gist_it/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/gist_it/gist_it.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/gist_it/gist_it.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'cell_filter/cell_filter' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/cell_filter/cell_filter.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/cell_filter/cell_filter.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'scratchpad/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/scratchpad/scratchpad.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/scratchpad/scratchpad.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'toc2/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/toc2/toc2.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/toc2/toc2.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'nbTranslate/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/nbTranslate/nbTranslate.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/nbTranslate/nbTranslate.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'equation-numbering/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/equation-numbering/info.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/equation-numbering/info.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'navigation-hotkeys/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/navigation-hotkeys/hotkeys.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/navigation-hotkeys/hotkeys.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'snippets_menu/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/snippets_menu/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/snippets_menu/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'printview/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/printview/printview.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/printview/printview.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'export_embedded/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/export_embedded/export_embedded.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/export_embedded/export_embedded.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'autoscroll/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/autoscroll/autoscroll.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/autoscroll/autoscroll.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_input/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_input/hide-input.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_input/hide-input.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_input_all/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_input_all/hide_input_all.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_input_all/hide_input_all.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'keyboard_shortcut_editor/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/keyboard_shortcut_editor/keyboard_shortcut_editor.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/keyboard_shortcut_editor/keyboard_shortcut_editor.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'help_panel/help_panel' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/help_panel/help_panel.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/help_panel/help_panel.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'move_selected_cells/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/move_selected_cells/move_selected_cells.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/move_selected_cells/move_selected_cells.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'zenmode/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/zenmode/zenmode.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/zenmode/zenmode.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'skip-traceback/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/skip-traceback/skip-traceback.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/skip-traceback/skip-traceback.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'python-markdown/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/python-markdown/python-markdown.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/python-markdown/python-markdown.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codefolding/edit' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codefolding/codefolding_editor.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codefolding/codefolding_editor.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codefolding/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codefolding/codefolding.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codefolding/codefolding.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'collapsible_headings/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/collapsible_headings/collapsible_headings.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/collapsible_headings/collapsible_headings.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'exercise/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/exercise/exercise.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/exercise/exercise.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codemirror_mode_extensions/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codemirror_mode_extensions/codemirror_mode_extensions.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codemirror_mode_extensions/codemirror_mode_extensions.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'ruler/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/ruler/ruler.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/ruler/ruler.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'highlight_selected_word/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/highlight_selected_word/configurator.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/highlight_selected_word/configurator.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'contrib_nbextensions_help_item/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/contrib_nbextensions_help_item/contrib_nbextensions_help_item.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/contrib_nbextensions_help_item/contrib_nbextensions_help_item.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'datestamper/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/datestamper/main.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/datestamper/main.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'init_cell/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/init_cell/init_cell.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/init_cell/init_cell.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'limit_output/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/limit_output/limit-output.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/limit_output/limit-output.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'qtconsole/qtconsole' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/qtconsole/qtconsole.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/qtconsole/qtconsole.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'addbefore/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/addbefore/addbefore.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/addbefore/addbefore.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'highlighter/highlighter' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/highlighter/highlighter.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/highlighter/highlighter.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'comment-uncomment/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/comment-uncomment/comment-uncomment.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/comment-uncomment/comment-uncomment.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_font_size/code_font_size' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_font_size/code_font_size.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_font_size/code_font_size.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'varInspector/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/varInspector/varInspector.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/varInspector/varInspector.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'latex_envs/latex_envs' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/latex_envs/latex_envs.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/latex_envs/latex_envs.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'execute_time/ExecuteTime' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/execute_time/ExecuteTime.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/execute_time/ExecuteTime.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'spellchecker/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/spellchecker/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/spellchecker/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/2to3' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/2to3.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/2to3.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/code_prettify' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/code_prettify.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/code_prettify.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/autopep8' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/autopep8.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/autopep8.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/isort' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/isort.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/isort.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'load_tex_macros/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/load_tex_macros/load_tex_macros.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/load_tex_macros/load_tex_macros.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_header/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_header/hide_header.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_header/hide_header.yaml'
+[LabApp | INFO] Kernel started: 549e88bc-5caa-431a-b2ec-6adb8d3addae
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 549e88bc-5caa-431a-b2ec-6adb8d3addae
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasBasics.ipynb
+[LabApp | INFO] Saving PandasBasics.ipynb
+[LabApp | WARNING] Notebook content/Pandas/PandasBasics.ipynb is not trusted
+[LabApp | INFO] Saving file at /content/Pandas/PandasEssentials.ipynb
+[LabApp | INFO] Saving PandasEssentials.ipynb
+[LabApp | INFO] Saving file at /content/Pandas/PandasEssentials.ipynb
+[LabApp | INFO] Saving PandasEssentials.ipynb
+[LabApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[LabApp | INFO] Loading the validate_assignment nbgrader serverextension
+[LabApp | WARNING] JupyterLab server extension not enabled, manually loading...
+[LabApp | INFO] JupyterLab extension loaded from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyterlab
+[LabApp | INFO] JupyterLab application directory is /Library/Frameworks/Python.framework/Versions/3.7/share/jupyter/lab
+[LabApp | INFO] Serving notebooks from local directory: /Users/simaonovais/Documents/Documents – Simao’s MacBook Air/GitHub/ChutaCodigo
+[LabApp | INFO] The Jupyter Notebook is running at:
+[LabApp | INFO] http://localhost:8889/?token=88609c15fd306b8dd47b99a03830f7c97cee820507f6863a
+[LabApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[LabApp | CRITICAL] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/simaonovais/Library/Jupyter/runtime/nbserver-41529-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/?token=88609c15fd306b8dd47b99a03830f7c97cee820507f6863a
+[LabApp | WARNING] Could not determine jupyterlab build status without nodejs
+[LabApp | WARNING] 404 GET /api/contents/AequitasEDA.ipynb?content=0&1578139596241 (::1): No such file or directory: AequitasEDA.ipynb
+[LabApp | WARNING] No such file or directory: AequitasEDA.ipynb
+[LabApp | WARNING] 404 GET /api/contents/AequitasEDA.ipynb?content=0&1578139596241 (::1) 2.17ms referer=http://localhost:8889/lab
+[LabApp | WARNING] 404 GET /api/contents/utils.py?content=0&1578139596242 (::1): No such file or directory: utils.py
+[LabApp | WARNING] No such file or directory: utils.py
+[LabApp | WARNING] 404 GET /api/contents/utils.py?content=0&1578139596242 (::1) 2.76ms referer=http://localhost:8889/lab
+[LabApp | WARNING] 404 GET /api/contents/Pandas_profile_report.html?content=0&1578139596240 (::1): No such file or directory: Pandas_profile_report.html
+[LabApp | WARNING] No such file or directory: Pandas_profile_report.html
+[LabApp | WARNING] 404 GET /api/contents/Pandas_profile_report.html?content=0&1578139596240 (::1) 3.52ms referer=http://localhost:8889/lab
+[LabApp | WARNING] 404 GET /api/contents/temp-plot.html?content=0&1578139596240 (::1): No such file or directory: temp-plot.html
+[LabApp | WARNING] No such file or directory: temp-plot.html
+[LabApp | WARNING] 404 GET /api/contents/temp-plot.html?content=0&1578139596240 (::1) 3.61ms referer=http://localhost:8889/lab
+[LabApp | WARNING] 404 GET /api/contents/EDA.ipynb?content=0&1578139596241 (::1): No such file or directory: EDA.ipynb
+[LabApp | WARNING] No such file or directory: EDA.ipynb
+[LabApp | WARNING] 404 GET /api/contents/EDA.ipynb?content=0&1578139596241 (::1) 2.16ms referer=http://localhost:8889/lab
+[LabApp | WARNING] Notebook /content/Pandas/PandasEssentials.ipynb is not trusted
+[LabApp | INFO] Kernel started: 73ad70da-1c9b-4717-a88a-65199af94d46
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 73ad70da-1c9b-4717-a88a-65199af94d46
+[LabApp | INFO] Adapting to protocol v5.1 for kernel 73ad70da-1c9b-4717-a88a-65199af94d46
+[LabApp | INFO] Saving file at /content/Pandas/PandasEssentials.ipynb
+[LabApp | INFO] Saving PandasEssentials.ipynb
+[LabApp | WARNING] Notebook content/Pandas/PandasEssentials.ipynb is not trusted
+[LabApp | INFO] Starting buffering for 73ad70da-1c9b-4717-a88a-65199af94d46:a7b3664d-1784-4901-8601-008a4451b966
+[LabApp | WARNING] Could not determine jupyterlab build status without nodejs
+[LabApp | WARNING] 404 GET /api/contents/EDA.ipynb?content=0&1578139694760 (::1): No such file or directory: EDA.ipynb
+[LabApp | WARNING] No such file or directory: EDA.ipynb
+[LabApp | WARNING] 404 GET /api/contents/EDA.ipynb?content=0&1578139694760 (::1) 2.69ms referer=http://localhost:8889/lab
+[LabApp | INFO] 302 GET / (::1) 1.03ms
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'rubberband/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/rubberband/rubberband.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/rubberband/rubberband.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'scroll_down/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/scroll_down/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/scroll_down/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hinterland/hinterland' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hinterland/hinterland.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hinterland/hinterland.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'snippets/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/snippets/snippets.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/snippets/snippets.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'toggle_all_line_numbers/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/toggle_all_line_numbers/main.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/toggle_all_line_numbers/main.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'notify/notify' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/notify/notify.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/notify/notify.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'runtools/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/runtools/runtools.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/runtools/runtools.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'tree-filter/index' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/tree-filter/tree-filter.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/tree-filter/tree-filter.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'table_beautifier/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/table_beautifier/table_beautifier.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/table_beautifier/table_beautifier.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'freeze/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/freeze/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/freeze/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'exercise2/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/exercise2/exercise2.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/exercise2/exercise2.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'execution_dependencies/execution_dependencies' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/execution_dependencies/execution_dependencies.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/execution_dependencies/execution_dependencies.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'skill/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/skill/skill.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/skill/skill.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'splitcell/splitcell' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/splitcell/splitcell.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/splitcell/splitcell.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'autosavetime/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/autosavetime/autosavetime.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/autosavetime/autosavetime.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'select_keymap/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/select_keymap/select_keymap.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/select_keymap/select_keymap.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'livemdpreview/livemdpreview' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/livemdpreview/livemdpreview.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/livemdpreview/livemdpreview.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'gist_it/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/gist_it/gist_it.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/gist_it/gist_it.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'cell_filter/cell_filter' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/cell_filter/cell_filter.yml' and '/Users/simaonovais/Library/Jupyter/nbextensions/cell_filter/cell_filter.yml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'scratchpad/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/scratchpad/scratchpad.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/scratchpad/scratchpad.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'toc2/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/toc2/toc2.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/toc2/toc2.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'nbTranslate/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/nbTranslate/nbTranslate.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/nbTranslate/nbTranslate.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'equation-numbering/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/equation-numbering/info.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/equation-numbering/info.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'navigation-hotkeys/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/navigation-hotkeys/hotkeys.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/navigation-hotkeys/hotkeys.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'snippets_menu/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/snippets_menu/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/snippets_menu/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'printview/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/printview/printview.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/printview/printview.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'export_embedded/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/export_embedded/export_embedded.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/export_embedded/export_embedded.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'autoscroll/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/autoscroll/autoscroll.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/autoscroll/autoscroll.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_input/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_input/hide-input.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_input/hide-input.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_input_all/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_input_all/hide_input_all.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_input_all/hide_input_all.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'keyboard_shortcut_editor/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/keyboard_shortcut_editor/keyboard_shortcut_editor.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/keyboard_shortcut_editor/keyboard_shortcut_editor.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'help_panel/help_panel' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/help_panel/help_panel.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/help_panel/help_panel.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'move_selected_cells/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/move_selected_cells/move_selected_cells.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/move_selected_cells/move_selected_cells.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'zenmode/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/zenmode/zenmode.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/zenmode/zenmode.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'skip-traceback/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/skip-traceback/skip-traceback.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/skip-traceback/skip-traceback.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'python-markdown/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/python-markdown/python-markdown.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/python-markdown/python-markdown.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codefolding/edit' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codefolding/codefolding_editor.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codefolding/codefolding_editor.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codefolding/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codefolding/codefolding.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codefolding/codefolding.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'collapsible_headings/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/collapsible_headings/collapsible_headings.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/collapsible_headings/collapsible_headings.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'exercise/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/exercise/exercise.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/exercise/exercise.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'codemirror_mode_extensions/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/codemirror_mode_extensions/codemirror_mode_extensions.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/codemirror_mode_extensions/codemirror_mode_extensions.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'ruler/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/ruler/ruler.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/ruler/ruler.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'highlight_selected_word/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/highlight_selected_word/configurator.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/highlight_selected_word/configurator.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'contrib_nbextensions_help_item/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/contrib_nbextensions_help_item/contrib_nbextensions_help_item.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/contrib_nbextensions_help_item/contrib_nbextensions_help_item.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'datestamper/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/datestamper/main.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/datestamper/main.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'init_cell/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/init_cell/init_cell.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/init_cell/init_cell.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'limit_output/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/limit_output/limit-output.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/limit_output/limit-output.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'qtconsole/qtconsole' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/qtconsole/qtconsole.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/qtconsole/qtconsole.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'addbefore/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/addbefore/addbefore.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/addbefore/addbefore.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'highlighter/highlighter' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/highlighter/highlighter.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/highlighter/highlighter.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'comment-uncomment/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/comment-uncomment/comment-uncomment.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/comment-uncomment/comment-uncomment.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_font_size/code_font_size' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_font_size/code_font_size.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_font_size/code_font_size.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'varInspector/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/varInspector/varInspector.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/varInspector/varInspector.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'latex_envs/latex_envs' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/latex_envs/latex_envs.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/latex_envs/latex_envs.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'execute_time/ExecuteTime' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/execute_time/ExecuteTime.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/execute_time/ExecuteTime.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'spellchecker/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/spellchecker/config.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/spellchecker/config.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/2to3' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/2to3.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/2to3.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/code_prettify' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/code_prettify.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/code_prettify.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/autopep8' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/autopep8.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/autopep8.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'code_prettify/isort' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/code_prettify/isort.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/code_prettify/isort.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'load_tex_macros/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/load_tex_macros/load_tex_macros.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/load_tex_macros/load_tex_macros.yaml'
+[LabApp | WARNING] [jupyter_nbextensions_configurator] nbextension 'hide_header/main' has duplicate listings in both '/usr/local/share/jupyter/nbextensions/hide_header/hide_header.yaml' and '/Users/simaonovais/Library/Jupyter/nbextensions/hide_header/hide_header.yaml'
+[LabApp | WARNING] Notebook /content/Pandas/PandasEssentials.ipynb is not trusted
+[LabApp | INFO] Kernel started: be67f71d-3f2d-4c62-b563-d4a5a138cee4
+[LabApp | INFO] Adapting to protocol v5.1 for kernel be67f71d-3f2d-4c62-b563-d4a5a138cee4
+[LabApp | INFO] Saving file at /content/Pandas/PandasEssentials.ipynb
+[LabApp | INFO] Saving PandasEssentials.ipynb
+[LabApp | WARNING] Notebook content/Pandas/PandasEssentials.ipynb is not trusted

@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Home</title>
-  <meta name="description" content="Books with Jupyter and Jekyll This Book covers several topics on data science and...Rules While developing a new page you have to create a new branch using t...">
+  <title>Pandas Bascis</title>
+  <meta name="description" content="Pandas This is the data manipulation library for python.    import pandas as pd    Series Create a Pandas Series while specifying the index    pd.Series(data...">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//intro.html">
+  <link rel="canonical" href="http://0.0.0.0:4000//Pandas/PandasBasics.html">
   <link rel="alternate" type="application/rss+xml" title="YOUR BOOK NAME" href="http://0.0.0.0:4000//feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000//intro.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000//Pandas/PandasBasics.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Home" />
-<meta property="og:description" content="Books with Jupyter and Jekyll This Book covers several topics on data science and...Rules While developing a new page you have to create a new branch using t..." />
+<meta property="og:title"       content="Pandas Bascis" />
+<meta property="og:description" content="Pandas This is the data manipulation library for python.    import pandas as pd    Series Create a Pandas Series while specifying the index    pd.Series(data..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -24,11 +24,11 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://0.0.0.0:4000//intro.html",
-  "headline": "Home",
+  "mainEntityOfPage": "http://0.0.0.0:4000//Pandas/PandasBasics.html",
+  "headline": "Pandas Bascis",
   "datePublished": "2020-01-04T06:20:15-06:00",
   "dateModified": "2020-01-04T06:20:15-06:00",
-  "description": "Books with Jupyter and Jekyll This Book covers several topics on data science and...Rules While developing a new page you have to create a new branch using t...",
+  "description": "Pandas This is the data manipulation library for python.    import pandas as pd    Series Create a Pandas Series while specifying the index    pd.Series(data...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -432,7 +432,7 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/intro.html"
         >
           
@@ -497,7 +497,7 @@ initFunction(initPrint)
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
+        <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/Pandas/PandasBasics.html"
         >
           
@@ -604,7 +604,7 @@ initFunction(initPrint)
 <div class="download-buttons-dropdown">
     <button id="dropdown-button-trigger" class="interact-button"><i class="fa fa-download"></i></button>
     <div class="download-buttons">
-        <a href="/content/intro.md" download>
+        <a href="/content/Pandas/PandasBasics.ipynb" download>
         <button id="interact-button-download" class="interact-button">ORIG</button>
         </a>
         
@@ -639,14 +639,491 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Books-with-Jupyter-and-Jekyll">Books with Jupyter and Jekyll<a class="anchor-link" href="#Books-with-Jupyter-and-Jekyll"> </a></h1><p>This Book covers several topics on data science and...</p>
-<h2 id="Rules">Rules<a class="anchor-link" href="#Rules"> </a></h2><p>While developing a new page you have to create a new branch using that page's name. When you think it is finished create a pull request to merge with master and wait for the other contributors to review it.</p>
-<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements"> </a></h2><p>Jupyter Books was originally created by <a href="http://www.samlau.me/">Sam Lau</a> and <a href="https://predictablynoisy.com">Chris Holdgraf</a>
-with support of the <strong>UC Berkeley Data Science Education Program and the Berkeley
-Institute for Data Science</strong>.</p>
+<h1 id="Pandas">Pandas<a class="anchor-link" href="#Pandas"> </a></h1><p>This is <strong>the</strong> data manipulation library for python.</p>
 
 </div>
 </div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Series">Series<a class="anchor-link" href="#Series"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create a Pandas Series while specifying the index</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Bill&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Steve&quot;</span><span class="p">],</span> 
+               <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Google&quot;</span><span class="p">,</span> <span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Google       Larry
+Microsoft     Bill
+Facebook      Mark
+Apple        Steve
+dtype: object</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now using a dictionary. The keys of the dictionary will become the index of the series!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Google&quot;</span><span class="p">:</span> <span class="s2">&quot;Larry&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Microsoft&quot;</span><span class="p">:</span> <span class="s2">&quot;Bill&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Facebook&quot;</span><span class="p">:</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Apple&quot;</span><span class="p">:</span> <span class="s2">&quot;Steve&quot;</span><span class="p">}</span>
+
+<span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+<span class="n">my_series</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Google       Larry
+Microsoft     Bill
+Facebook      Mark
+Apple        Steve
+dtype: object</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can convert a series directly to numpy</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([&#39;Google&#39;, &#39;Microsoft&#39;, &#39;Facebook&#39;, &#39;Apple&#39;], dtype=object)</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="DataFrames">DataFrames<a class="anchor-link" href="#DataFrames"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Simple dataframe. Using index and column names</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span>   <span class="mi">3</span><span class="p">,</span>    <span class="mi">7</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.1</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="p">],</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;col_1&quot;</span><span class="p">,</span> <span class="s2">&quot;col_2&quot;</span><span class="p">,</span> <span class="s2">&quot;col_3&quot;</span><span class="p">,</span> <span class="s2">&quot;col_4&quot;</span><span class="p">],</span>  <span class="c1"># &lt;-- The column names</span>
+                    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;row_1&quot;</span><span class="p">,</span> <span class="s2">&quot;row_2&quot;</span><span class="p">,</span> <span class="s2">&quot;row_3&quot;</span><span class="p">])</span>   <span class="c1"># &lt;-- The row names</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col_1</th>
+      <th>col_2</th>
+      <th>col_3</th>
+      <th>col_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>row_1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>row_2</th>
+      <td>4.2</td>
+      <td>6.1</td>
+      <td>8.9</td>
+      <td>-4.1</td>
+    </tr>
+    <tr>
+      <th>row_3</th>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>z</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A more organized way to do it</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">company</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Google&quot;</span><span class="p">,</span> <span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">]</span>
+<span class="n">founder_name</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Bill&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Steve&quot;</span><span class="p">]</span>
+<span class="n">founder_surname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Page&quot;</span><span class="p">,</span> <span class="s2">&quot;Gates&quot;</span><span class="p">,</span> <span class="s2">&quot;Zuckerberg&quot;</span><span class="p">,</span> <span class="s2">&quot;Jobs&quot;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="p">[</span> <span class="n">company</span><span class="p">,</span> <span class="n">founder_name</span><span class="p">,</span> <span class="n">founder_surname</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Google</td>
+      <td>Microsoft</td>
+      <td>Facebook</td>
+      <td>Apple</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Larry</td>
+      <td>Bill</td>
+      <td>Mark</td>
+      <td>Steve</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Page</td>
+      <td>Gates</td>
+      <td>Zuckerberg</td>
+      <td>Jobs</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrames-with-dictionary">DataFrames with dictionary<a class="anchor-link" href="#DataFrames-with-dictionary"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tech_companies_dictionary</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Google&quot;</span><span class="p">,</span> <span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span> <span class="s2">&quot;Facebook&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">],</span>
+    <span class="s1">&#39;founder_name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Bill&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Steve&quot;</span><span class="p">],</span>
+    <span class="s1">&#39;founder_surname&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Page&quot;</span><span class="p">,</span> <span class="s2">&quot;Gates&quot;</span><span class="p">,</span> <span class="s2">&quot;Zuckerberg&quot;</span><span class="p">,</span> <span class="s2">&quot;Jobs&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tech_companies_dictionary</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>company</th>
+      <th>founder_name</th>
+      <th>founder_surname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Google</td>
+      <td>Larry</td>
+      <td>Page</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Microsoft</td>
+      <td>Bill</td>
+      <td>Gates</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Facebook</td>
+      <td>Mark</td>
+      <td>Zuckerberg</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Apple</td>
+      <td>Steve</td>
+      <td>Jobs</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -659,15 +1136,15 @@ Institute for Data Science</strong>.</p>
             <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="">
-      〈 <span class="u-margin-right-tiny"></span> 
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/intro.html">
+      〈 <span class="u-margin-right-tiny"></span> Home
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/Pandas/PandasBasics.html">
-      Pandas Bascis <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/features/features.html">
+      Features and customization <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>
